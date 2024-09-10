@@ -153,7 +153,7 @@ if submit2:
 
 if submit3 and uplded_file:
     pdf_content = input_pdf(uplded_file)
-    matched_keywords = get_gemini_response(input_prompt_3, pdf_conent,input_text)
+    matched_keywords = get_gemini_response(input_prompt_3, pdf_content,input_text)
     st.subheader("Matched Skills/Keywords:")
     st.write(matched_keywords)
 elif submit3:
