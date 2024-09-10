@@ -129,6 +129,10 @@ Give me the percentage match if the resume matches the Job Description.
 First the output should come as percentage, then keywords missing and last final.
 """
 
+input_prompt_3 = """You are an experienced HR professional with a background in technical roles such as Data Science, Full Stack Development, Web Development, Big Data Engineering, DevOps, or Data Analysis. 
+Your task is to carefully analyze the provided resume and extract key technical skills, tools, programming languages, and relevant job-specific keywords that align with any of the mentioned roles. 
+Focus on identifying the most critical terms that match the expected job profile requirements."""
+
 if submit1:
     if uplded_file is not None:
         pdf_content = input_pdf(uplded_file)
@@ -148,8 +152,8 @@ if submit2:
         st.write("Please upload the PDF file")
 
 if submit3 and uplded_file:
-    pdf_summary = extract_pdf_text(uplded_file)
-    matched_keywords = extract_keywords(input_text, pdf_summary)
+    pdf_content = input_pdf(uplded_file)
+    matched_keywords = extract_keywords(input_prompt_3, pdf_conent,input_text)
     st.subheader("Matched Skills/Keywords:")
     st.write(matched_keywords)
 elif submit3:
